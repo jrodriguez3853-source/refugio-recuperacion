@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulario de ingreso de un animal rescatado en Huellas de Esperanza.">
+    <title>Huellas de Esperanza | Reportar rescate</title>
+</head>
+<body>
+    <header>
+        <h1>Huellas de Esperanza</h1>
+        <p>Sistema de control de rescate y adopción animal</p>
+    </header>
+
+    <nav aria-label="Navegación principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reportar.html" aria-current="page">Reportar un rescate</a></li>
+            <li><a href="rescates.html">Consultar rescates</a></li>
+        </ul>
+    </nav>
+
+    <main id="contenido-principal">
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Registrar un nuevo animal rescatado</h2>
+            <p>
+                Complete los campos para documentar el reporte inicial del animal.
+                Los campos señalados como obligatorios deben contener información.
+            </p>
+
+            <article>
+                <h3>Datos del rescate</h3>
+                <form action="rescates.html" method="get" accept-charset="UTF-8">
+                    <p>
+                        <label for="nombre-provisional">Título del caso o nombre provisional:</label><br>
+                        <input type="text" id="nombre-provisional" name="nombre_provisional"
+                               autocomplete="off" required>
+                    </p>
+
+                    <p>
+                        <label for="ubicacion">Ubicación donde se encontró al animal:</label><br>
+                        <input type="text" id="ubicacion" name="ubicacion"
+                               autocomplete="street-address" required>
+                    </p>
+
+                    <p>
+                        <label for="categoria">Categoría del animal:</label><br>
+                        <select id="categoria" name="categoria" required>
+                            <option value="" selected disabled>Seleccione una categoría</option>
+                            <option value="Perros">Perros</option>
+                            <option value="Gatos">Gatos</option>
+                            <option value="Fauna silvestre">Fauna Silvestre</option>
+                        </select>
+                    </p>
+
+                    <fieldset>
+                        <legend>Nivel de urgencia médica:</legend>
+                        <p>
+                            <input type="radio" id="urgencia-alta" name="urgencia"
+                                   value="Alta" required>
+                            <label for="urgencia-alta">Alta</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="urgencia-media" name="urgencia"
+                                   value="Media">
+                            <label for="urgencia-media">Media</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="urgencia-baja" name="urgencia"
+                                   value="Baja">
+                            <label for="urgencia-baja">Baja</label>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <label for="descripcion">Descripción del estado en que se encontró:</label><br>
+                        <textarea id="descripcion" name="descripcion" rows="6" cols="50"
+                                  required></textarea>
+                    </p>
+
+                    <p>
+                        <button type="submit">Enviar reporte</button>
+                        <button type="reset">Limpiar formulario</button>
+                    </p>
+                </form>
+            </article>
+        </section>
+
+        <section aria-labelledby="nota-formulario">
+            <h2 id="nota-formulario">Información del prototipo</h2>
+            <article>
+                <h3>Alcance del formulario</h3>
+                <p>
+                    Esta versión utiliza validaciones nativas de HTML5 y envía los campos
+                    mediante el método GET a la página de consulta. Al no incluir servidor,
+                    JavaScript ni base de datos, los datos no se almacenan ni se incorporan
+                    automáticamente a la tabla de casos.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Actividad Autónoma #3 – Desarrollo de Sistemas Informáticos.</p>
+        <p>Prototipo académico de la Universidad Técnica de Manabí.</p>
+    </footer>
+</body>
+</html>
